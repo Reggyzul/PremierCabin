@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  body {
+    background-color: #0B241C;
+    color: #F5F1E8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom Editorial Palette Utilities */
+.bg-deep-forest { background-color: #0B241C; }
+.bg-forest-green { background-color: #123C2E; }
+.bg-warm-ivory { background-color: #F5F1E8; }
+.bg-champagne-gold { background-color: #C9A227; }
+.bg-soft-sand { background-color: #D8CDBB; }
+.bg-charcoal-dark { background-color: #17201C; }
+
+.text-deep-forest { color: #0B241C; }
+.text-forest-green { color: #123C2E; }
+.text-warm-ivory { color: #F5F1E8; }
+.text-champagne-gold { color: #C9A227; }
+.text-soft-sand { color: #D8CDBB; }
+
+.border-champagne-gold { border-color: #C9A227; }
+.border-forest-green { border-color: #123C2E; }
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B241C;
+}
+::-webkit-scrollbar-thumb {
+  background: #123C2E;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A227;
+}
