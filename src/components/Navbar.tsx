@@ -149,19 +149,6 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenContactModal
               {t.business}
             </button>
 
-            <button
-              onClick={() => handleNavClick('home', 'investment')}
-              className="block mx-auto font-serif text-2xl sm:text-4xl md:text-5xl text-white/90 hover:text-[#C9A227] tracking-wide transition-colors"
-            >
-              {t.investment}
-            </button>
-
-            <button
-              onClick={() => handleNavClick('home', 'destinations')}
-              className="block mx-auto font-serif text-2xl sm:text-4xl md:text-5xl text-white/90 hover:text-[#C9A227] tracking-wide transition-colors"
-            >
-              {t.destinations}
-            </button>
 
             <div className="pt-6">
               <button
