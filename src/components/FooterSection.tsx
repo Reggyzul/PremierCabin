@@ -64,7 +64,7 @@ export default function FooterSection({ onNavigatePage, onOpenContactModal }: Fo
               </li>
               <li>
                 <button onClick={() => onNavigatePage && onNavigatePage('saung-sare')} className="hover:text-[#C9A227] transition-colors cursor-pointer">
-                  {TRANSLATIONS[language].nav.projects} — Saung Sare
+                  Saung Sare
                 </button>
               </li>
               <li>

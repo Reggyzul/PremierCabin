@@ -139,7 +139,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenContactModal
                 currentPage === 'saung-sare' ? 'text-[#C9A227] italic font-semibold' : 'text-white/90 hover:text-[#C9A227]'
               }`}
             >
-              {t.projects} — Saung Sare
+              Saung Sare
             </button>
 
             <button
@@ -148,7 +148,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenContactModal
                 currentPage === 'my-cabin' ? 'text-[#C9A227] italic font-semibold' : 'text-white/90 hover:text-[#C9A227]'
               }`}
             >
-              My Cabin — Prospectus
+              My Cabin Prospectus
             </button>
 
             <button
