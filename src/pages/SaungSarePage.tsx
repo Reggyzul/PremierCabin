@@ -90,7 +90,7 @@ export default function SaungSarePage({ onOpenContactModal }: SaungSarePageProps
       icon: <UtensilsCrossed className="w-5 h-5 text-[#C9A227]" strokeWidth={1.5} />,
       title: language === 'ID' ? 'Resto Saung Sare' : 'Saung Sare Restaurant',
       desc: language === 'ID' ? 'Menu lezat, sehat, dan menggugah selera, disajikan dengan pemandangan alam.' : 'Delicious, healthy, and savory local cuisine served with a view.',
-      image: SITE_IMAGES.hospitalityMgmt,
+      image: SITE_IMAGES.restoSaungSare,
     },
     {
       category: 'pool',

@@ -2,6 +2,10 @@ import tentangKamiMasterImg from '../assets/tentang_kami_master.jpg';
 import saungSareHeroImg from '../assets/saung_sare_hero.png';
 import saungSareInteriorImg from '../assets/saung_sare_interior.png';
 import hospitalityVillaImg from '../assets/hospitality_villa.png';
+import restoSaungSareImg from '../assets/resto_saung_sare.png';
+import hospitalityImg from '../assets/hospitality.png';
+import investasiImg from '../assets/investasi.png';
+import travelLifestyleImg from '../assets/travel_lifestyle.png';
 
 // Centralized High-Resolution 4K Editorial Asset Management for PT. Premier Cabin Internasional
 export const SITE_IMAGES = {
@@ -16,9 +20,10 @@ export const SITE_IMAGES = {
 
   // 4. CORE BUSINESS IMAGES (01 Property, 02 Hospitality, 03 Investment, 04 Travel & Lifestyle)
   propertyDev: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=95',
-  hospitalityMgmt: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2000&q=95',
-  investmentHQ: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=95',
-  travelLifestyle: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=95',
+  hospitalityMgmt: hospitalityImg,
+  investmentHQ: investasiImg,
+  travelLifestyle: travelLifestyleImg,
+  restoSaungSare: restoSaungSareImg,
 
   // 5. CABIN EXPERIENCE COLLAGE IMAGES (Exterior, Interior, Morning Atmosphere)
   cabinExterior: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2000&q=95',
