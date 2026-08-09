@@ -156,7 +156,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
         <div className="absolute inset-0 z-0">
           <img
             src={SITE_IMAGES.scandiAFrameCabin}
-            alt="My Cabin Premiere - Where Nature Embraces Luxury"
+            alt="My Cabin Prospectus - Escape to Nature"
             className="w-full h-full object-cover object-center filter brightness-[0.65] scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#0D1712]/60 to-[#0D1712] z-10" />
@@ -180,10 +180,10 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
           {/* MAIN BRAND TITLE & TAGLINE */}
           <div className="space-y-3">
             <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[1.02]">
-              MY CABIN <span className="italic text-[#D4AF37] font-light">PREMIERE</span>
+              MY CABIN <span className="italic text-[#D4AF37] font-light">PROSPECTUS</span>
             </h1>
             <p className="font-serif italic text-xl sm:text-3xl text-[#D4AF37] font-light tracking-wide">
-              Where Nature Embraces Luxury
+              Escape to Nature
             </p>
           </div>
 
@@ -242,7 +242,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
               <div className="flex items-center gap-3">
                 <span className="h-[1px] w-8 bg-[#D4AF37]" />
                 <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
-                  MY CABIN PREMIERE CONCEPT
+                  MY CABIN PROSPECTUS CONCEPT
                 </span>
               </div>
 
@@ -252,7 +252,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
               </h2>
 
               <p className="font-sans font-light text-base sm:text-lg text-[#EBE8DF]/90 leading-relaxed max-w-2xl">
-                My Cabin Premiere dirancang untuk Anda yang menginginkan ketenangan, kenyamanan, dan kemewahan dalam satu harmoni. Dikelilingi pepohonan hijau, udara sejuk, dan pemandangan menakjubkan yang menenangkan jiwa.
+                My Cabin Prospectus dirancang untuk Anda yang menginginkan ketenangan, kenyamanan, dan kemewahan dalam satu harmoni. Dikelilingi pepohonan hijau, udara sejuk, dan pemandangan menakjubkan yang menenangkan jiwa.
               </p>
             </div>
 
@@ -361,7 +361,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
               </div>
               <div className="p-6 pt-0">
                 <button
-                  onClick={() => handleOpenWA('Halo MY CABIN Premiere, saya berminat informasi konsep *Elevated Pine Treehouse*.')}
+                  onClick={() => handleOpenWA('Halo MY CABIN Prospectus, saya berminat informasi konsep *Elevated Pine Treehouse*.')}
                   className="w-full border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1712] text-[10px] font-sans uppercase font-bold tracking-[0.2em] py-3 transition-all cursor-pointer text-center"
                 >
                   Tanya Konsep Treehouse
@@ -393,7 +393,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
               </div>
               <div className="p-6 pt-0">
                 <button
-                  onClick={() => handleOpenWA('Halo MY CABIN Premiere, saya berminat informasi konsep *Riverside Bamboo Lodge*.')}
+                  onClick={() => handleOpenWA('Halo MY CABIN Prospectus, saya berminat informasi konsep *Riverside Bamboo Lodge*.')}
                   className="w-full border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1712] text-[10px] font-sans uppercase font-bold tracking-[0.2em] py-3 transition-all cursor-pointer text-center"
                 >
                   Tanya Konsep Riverside
@@ -425,7 +425,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
               </div>
               <div className="p-6 pt-0">
                 <button
-                  onClick={() => handleOpenWA('Halo MY CABIN Premiere, saya berminat informasi konsep *Tropical Eco Pool Villa*.')}
+                  onClick={() => handleOpenWA('Halo MY CABIN Prospectus, saya berminat informasi konsep *Tropical Eco Pool Villa*.')}
                   className="w-full border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1712] text-[10px] font-sans uppercase font-bold tracking-[0.2em] py-3 transition-all cursor-pointer text-center"
                 >
                   Tanya Konsep Pool Villa
@@ -510,7 +510,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
 
                 <div className="p-7 pt-0">
                   <button
-                    onClick={() => handleOpenWA(`Halo MY CABIN Premiere, saya ingin menanyakan info ketersediaan & brosur resmi unit *${unit.title}* (${unit.price}).`)}
+                    onClick={() => handleOpenWA(`Halo MY CABIN Prospectus, saya ingin menanyakan info ketersediaan & brosur resmi unit *${unit.title}* (${unit.price}).`)}
                     className="w-full bg-[#D4AF37] hover:bg-white text-[#0D1712] text-xs font-sans uppercase font-bold tracking-[0.2em] py-3.5 transition-all cursor-pointer text-center"
                   >
                     Pesan Unit {unit.title}
@@ -579,7 +579,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
 
               <div className="space-y-4">
                 <button
-                  onClick={() => handleOpenWA('Halo Sales MY CABIN Premiere, saya ingin klaim *PROMO SPESIAL FREE BIAYA KPR & BPHTB*.')}
+                  onClick={() => handleOpenWA('Halo Sales MY CABIN Prospectus, saya ingin klaim *PROMO SPESIAL FREE BIAYA KPR & BPHTB*.')}
                   className="w-full bg-[#D4AF37] hover:bg-white text-[#0D1712] text-xs font-sans uppercase font-bold tracking-[0.2em] py-4 transition-all cursor-pointer text-center"
                 >
                   Klaim Promo Spesial Sekarang
@@ -726,7 +726,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
           <div className="p-8 sm:p-12 bg-[#111B15] border border-[#D4AF37]/50 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-3">
               <span className="text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-[#D4AF37] block">
-                MY CABIN PREMIERE
+                MY CABIN PROSPECTUS
               </span>
               <h3 className="font-serif text-3xl sm:text-4xl text-white">
                 HUBUNGI KAMI SEKARANG
@@ -747,13 +747,13 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
                 <span>0877 4499 0421</span>
               </a>
               <span className="text-xs text-[#EBE8DF]/60 font-sans">
-                www.mycabinpremiere.com
+                www.mycabinprospectus.com
               </span>
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between text-xs text-[#EBE8DF]/60 font-light gap-4 pt-4 border-t border-white/10">
-            <p>© {new Date().getFullYear()} MY CABIN PREMIERE. Supported by <strong className="text-[#D4AF37]">MY HOLIDAY</strong> (Empowering Lifestyle Travel & Investment).</p>
+            <p>© {new Date().getFullYear()} MY CABIN PROSPECTUS. Supported by <strong className="text-[#D4AF37]">MY HOLIDAY</strong> (Empowering Lifestyle Travel & Investment).</p>
             <p className="tracking-widest uppercase text-[#D4AF37] font-semibold">POWERED BY JBI WORLD HOLDING COMPANY</p>
           </div>
 
@@ -764,7 +764,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
       {/* ── 9. MOBILE STICKY ACTION BAR ── */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0D1712]/95 border-t border-[#D4AF37]/40 backdrop-blur-lg p-3 grid grid-cols-2 gap-3 shadow-2xl">
         <button
-          onClick={() => handleOpenWA('Halo Sales MY CABIN Premiere, saya berminat informasi unit & reservasi.')}
+          onClick={() => handleOpenWA('Halo Sales MY CABIN Prospectus, saya berminat informasi unit & reservasi.')}
           className="bg-[#D4AF37] text-[#0D1712] text-[10px] font-sans font-bold uppercase tracking-wider py-3 flex items-center justify-center gap-1.5 shadow-lg"
         >
           <Bed className="w-3.5 h-3.5" />
@@ -772,7 +772,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
         </button>
 
         <button
-          onClick={() => handleOpenWA('Halo Tim Investor Relations MY CABIN Premiere, saya ingin konsultasi promo KPR & Investasi.')}
+          onClick={() => handleOpenWA('Halo Tim Investor Relations MY CABIN Prospectus, saya ingin konsultasi promo KPR & Investasi.')}
           className="border border-[#D4AF37] text-[#D4AF37] bg-[#111B15] text-[10px] font-sans font-bold uppercase tracking-wider py-3 flex items-center justify-center gap-1.5"
         >
           <Coins className="w-3.5 h-3.5 text-[#D4AF37]" />
