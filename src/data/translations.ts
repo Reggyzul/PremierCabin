@@ -23,7 +23,7 @@ export const TRANSLATIONS = {
     },
     story: {
       label: 'KISAH KAMI',
-      headline: 'Kami percaya masa depan hospitality terletak lebih dekat dengan alam.',
+      headline: 'Menghadirkan solusi properti eksklusif dan layanan akomodasi kelas dunia.',
       paragraph: 'Premier Cabin Internasional mengembangkan konsep properti dan hospitality yang dirancang secara cermat untuk menghubungkan manusia dengan alam, pengalaman berkesan, dan peluang investasi berkelanjutan.',
       cta: 'Pelajari Selengkapnya Tentang Visi Kami',
     },
@@ -175,7 +175,7 @@ export const TRANSLATIONS = {
     },
     story: {
       label: 'OUR STORY',
-      headline: 'We believe the future of hospitality is closer to nature.',
+      headline: 'Delivering exclusive property solutions and world-class accommodation services.',
       paragraph: 'Premier Cabin Internasional develops thoughtfully designed property and hospitality concepts that connect people with nature, meaningful experiences, and sustainable opportunities.',
       cta: 'Learn More About Our Vision',
     },

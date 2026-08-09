@@ -25,7 +25,7 @@ export default function FullWidthImageStorySection() {
           {t.label}
         </span>
 
-        <h3 className="font-serif font-normal text-3xl sm:text-6xl md:text-7xl text-[#F5F1E8] leading-tight tracking-tight drop-shadow-2xl">
+        <h3 className="font-serif font-normal text-2xl sm:text-5xl md:text-6xl text-[#F5F1E8] leading-tight tracking-tight drop-shadow-2xl break-words">
           "{t.headline}"
         </h3>
       </div>

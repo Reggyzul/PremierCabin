@@ -47,10 +47,10 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
   }, []);
 
   return (
-    <div className="relative text-left bg-[#0B241C] text-[#F5F1E8]">
+    <div className="relative text-left bg-[#0B241C] text-[#F5F1E8] overflow-x-hidden">
 
       {/* ── SCROLL SCENE: Hero (sticky) + Kisah Kami sheet ── */}
-      <div style={{ height: '200vh' }} className="relative">
+      <div style={{ height: '200vh' }} className="relative overflow-hidden">
 
         {/* 1. HERO — sticks to top while we scroll through the 200vh container */}
         <div
