@@ -315,6 +315,130 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
       </section>
 
 
+      {/* ── 3B. SANCTUARY ARCHITECTURE SHOWCASE (3 EXCLUSIVE USER PHOTOS) ── */}
+      <section className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-3">
+              <span className="h-[1px] w-8 bg-[#D4AF37]" />
+              <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
+                SANCTUARY ARCHITECTURE
+              </span>
+              <span className="h-[1px] w-8 bg-[#D4AF37]" />
+            </div>
+            <h2 className="font-serif text-3xl sm:text-5xl text-white">
+              Konsep Arsitektur Kabin Sanctuary
+            </h2>
+            <p className="font-sans font-light text-sm sm:text-base text-[#EBE8DF]/80">
+              Perpaduan arsitektur kayu Scandinavia, konstruksi panggung pohon, dan saung tepi sungai tropis.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            
+            {/* CARD 1: TREEHOUSE */}
+            <div className="group bg-[#0D1712] border border-white/10 overflow-hidden hover:border-[#D4AF37] transition-all duration-500 shadow-2xl flex flex-col justify-between">
+              <div>
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={SITE_IMAGES.myCabinTreehouse}
+                    alt="Elevated Treehouse Cabin"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
+                  />
+                  <span className="absolute top-4 left-4 bg-[#D4AF37] text-[#0D1712] font-sans text-[9px] font-bold uppercase tracking-widest px-3 py-1">
+                    ELEVATED TREEHOUSE
+                  </span>
+                </div>
+                <div className="p-6 space-y-3">
+                  <h3 className="font-serif font-bold text-2xl text-white group-hover:text-[#D4AF37] transition-colors">
+                    Elevated Pine Treehouse
+                  </h3>
+                  <p className="font-sans font-light text-xs text-[#EBE8DF]/80 leading-relaxed">
+                    Konstruksi kayu bertingkat yang berdiri megah di antara pepohonan pinus alami dengan akses tangga spiral dan balkoni luas.
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <button
+                  onClick={() => handleOpenWA('Halo MY CABIN Premiere, saya berminat informasi konsep *Elevated Pine Treehouse*.')}
+                  className="w-full border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1712] text-[10px] font-sans uppercase font-bold tracking-[0.2em] py-3 transition-all cursor-pointer text-center"
+                >
+                  Tanya Konsep Treehouse
+                </button>
+              </div>
+            </div>
+
+            {/* CARD 2: RIVERSIDE SANCTUARY */}
+            <div className="group bg-[#0D1712] border border-white/10 overflow-hidden hover:border-[#D4AF37] transition-all duration-500 shadow-2xl flex flex-col justify-between">
+              <div>
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={SITE_IMAGES.myCabinRiverside}
+                    alt="Riverside Bamboo Sanctuary"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
+                  />
+                  <span className="absolute top-4 left-4 bg-[#D4AF37] text-[#0D1712] font-sans text-[9px] font-bold uppercase tracking-widest px-3 py-1">
+                    RIVERSIDE SANCTUARY
+                  </span>
+                </div>
+                <div className="p-6 space-y-3">
+                  <h3 className="font-serif font-bold text-2xl text-white group-hover:text-[#D4AF37] transition-colors">
+                    Riverside Bamboo Lodge
+                  </h3>
+                  <p className="font-sans font-light text-xs text-[#EBE8DF]/80 leading-relaxed">
+                    Kabin saung bambu terbuka di atas aliran sungai tropis dengan tempat bersantai gantung melayang yang menenangkan.
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <button
+                  onClick={() => handleOpenWA('Halo MY CABIN Premiere, saya berminat informasi konsep *Riverside Bamboo Lodge*.')}
+                  className="w-full border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1712] text-[10px] font-sans uppercase font-bold tracking-[0.2em] py-3 transition-all cursor-pointer text-center"
+                >
+                  Tanya Konsep Riverside
+                </button>
+              </div>
+            </div>
+
+            {/* CARD 3: POOL VILLA */}
+            <div className="group bg-[#0D1712] border border-white/10 overflow-hidden hover:border-[#D4AF37] transition-all duration-500 shadow-2xl flex flex-col justify-between">
+              <div>
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={SITE_IMAGES.myCabinPoolVilla}
+                    alt="Tropical Eco Pool Villa"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
+                  />
+                  <span className="absolute top-4 left-4 bg-[#D4AF37] text-[#0D1712] font-sans text-[9px] font-bold uppercase tracking-widest px-3 py-1">
+                    PRIVATE POOL VILLA
+                  </span>
+                </div>
+                <div className="p-6 space-y-3">
+                  <h3 className="font-serif font-bold text-2xl text-white group-hover:text-[#D4AF37] transition-colors">
+                    Tropical Eco Pool Villa
+                  </h3>
+                  <p className="font-sans font-light text-xs text-[#EBE8DF]/80 leading-relaxed">
+                    Villa resort privat dengan kolam renang alami, dek kayu jati, dan suasana tropis tenang bergaya Aman Resorts.
+                  </p>
+                </div>
+              </div>
+              <div className="p-6 pt-0">
+                <button
+                  onClick={() => handleOpenWA('Halo MY CABIN Premiere, saya berminat informasi konsep *Tropical Eco Pool Villa*.')}
+                  className="w-full border border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1712] text-[10px] font-sans uppercase font-bold tracking-[0.2em] py-3 transition-all cursor-pointer text-center"
+                >
+                  Tanya Konsep Pool Villa
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
       {/* ── 4. PILIHAN UNIT TERBAIK (TIPE 45, TIPE 60, TIPE 90) ── */}
       <section id="units" className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">

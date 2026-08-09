@@ -12,6 +12,9 @@ import myCabinLivingRoomImg from '../assets/my_cabin_living_room.png';
 import myCabinBedroomImg from '../assets/my_cabin_bedroom.png';
 import myCabinKitchenImg from '../assets/my_cabin_kitchen.png';
 import myCabinPanoramicViewImg from '../assets/my_cabin_panoramic_view.png';
+import myCabinTreehouseImg from '../assets/my_cabin_treehouse.png';
+import myCabinRiversideImg from '../assets/my_cabin_riverside.png';
+import myCabinPoolVillaImg from '../assets/my_cabin_pool_villa.png';
 
 // Centralized High-Resolution 4K Editorial Asset Management for PT. Premier Cabin Internasional
 export const SITE_IMAGES = {
@@ -66,4 +69,7 @@ export const SITE_IMAGES = {
   myCabinBedroom: myCabinBedroomImg,
   myCabinKitchen: myCabinKitchenImg,
   myCabinPanoramicView: myCabinPanoramicViewImg,
+  myCabinTreehouse: myCabinTreehouseImg,
+  myCabinRiverside: myCabinRiversideImg,
+  myCabinPoolVilla: myCabinPoolVillaImg,
 };
