@@ -12,7 +12,10 @@ export default function StoryIntroSection({ onNavigatePage }: StoryIntroSectionP
   const t = TRANSLATIONS[language].story;
 
   return (
-    <section id="story" className="py-16 sm:py-24 bg-[#0D2820] text-[#F5F1E8] relative overflow-hidden border-b border-white/5">
+    <section id="story" className="py-14 sm:py-24 bg-[#0D2820] text-[#F5F1E8] relative overflow-hidden border-b border-white/5">
+      {/* LUXURY SHEET INDICATOR HANDLE */}
+      <div className="w-10 h-1 bg-[#C9A227]/40 rounded-full mx-auto mb-8 sm:mb-10" />
+
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12">
 
         {/* SMALL LABEL */}
