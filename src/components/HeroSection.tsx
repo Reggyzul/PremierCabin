@@ -24,7 +24,7 @@ export default function HeroSection({ onOpenSaungSare, onNavigatePage }: HeroSec
   };
 
   return (
-    <section className="relative w-full h-[68vh] sm:h-[85vh] md:h-screen min-h-[500px] sm:min-h-[600px] flex items-center justify-center bg-[#0B241C] text-white overflow-hidden">
+    <section className="relative w-full h-full min-h-screen flex items-center justify-center bg-[#0B241C] text-white overflow-hidden">
       
       {/* 🌊 FULL-BLEED LANDSCAPE BACKDROP BANNER */}
       <div className="absolute inset-0 z-0">
