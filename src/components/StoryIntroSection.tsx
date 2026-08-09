@@ -29,7 +29,7 @@ export default function StoryIntroSection({ onNavigatePage }: StoryIntroSectionP
           {/* LEFT: LARGE SERIF HEADLINE (7 COLS) */}
           <div className="lg:col-span-7 space-y-4">
             <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl text-[#F5F1E8] leading-[1.2] tracking-tight break-words">
-              "{t.headline}"
+              {t.headline}
             </h2>
           </div>
 
