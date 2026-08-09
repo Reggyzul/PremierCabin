@@ -149,48 +149,8 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
   return (
     <div className="bg-[#0D1712] text-[#F8F6F0] min-h-screen text-left selection:bg-[#D4AF37] selection:text-[#0D1712]">
 
-      {/* ── SUB-HEADER PAGE BAR ── */}
-      <div className="bg-[#111B15]/95 border-b border-[#D4AF37]/30 backdrop-blur-md pt-24 pb-4 px-6 sm:px-12 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          
-          <div className="flex items-center gap-3">
-            <Trees className="w-5 h-5 text-[#D4AF37]" />
-            <div>
-              <span className="font-serif font-bold text-lg text-white tracking-wide block leading-none">
-                MY CABIN PREMIERE
-              </span>
-              <span className="text-[9px] font-sans tracking-[0.3em] text-[#D4AF37] uppercase font-medium">
-                WHERE NATURE EMBRACES LUXURY
-              </span>
-            </div>
-          </div>
-
-          {/* NAV JUMP LINKS */}
-          <div className="hidden lg:flex items-center gap-8 text-xs font-sans tracking-widest text-[#EBE8DF]">
-            <a href="#concept" className="hover:text-[#D4AF37] transition-colors">KONSEP</a>
-            <a href="#interior" className="hover:text-[#D4AF37] transition-colors">INTERIOR</a>
-            <a href="#units" className="hover:text-[#D4AF37] transition-colors">PILIHAN UNIT</a>
-            <a href="#location" className="hover:text-[#D4AF37] transition-colors">LOKASI</a>
-            <a href="#promo" className="hover:text-[#D4AF37] transition-colors">PROMO</a>
-            <a href="#investment" className="hover:text-[#D4AF37] transition-colors">INVESTASI</a>
-          </div>
-
-          {/* ACTION BUTTONS */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => handleOpenWA('Halo Concierge MY CABIN Premiere, saya berminat informasi brosur & penawaran unit.')}
-              className="bg-[#D4AF37] hover:bg-white text-[#0D1712] text-[10px] sm:text-xs font-sans font-bold uppercase tracking-[0.2em] px-5 py-2 transition-all shadow-lg cursor-pointer"
-            >
-              Hubungi Kami
-            </button>
-          </div>
-
-        </div>
-      </div>
-
-
       {/* ── 1. HERO BANNER — MY CABIN PREMIERE ── */}
-      <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden py-24 bg-[#0D1712]">
+      <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-24 bg-[#0D1712]">
         
         {/* HERO BACKGROUND */}
         <div className="absolute inset-0 z-0">
