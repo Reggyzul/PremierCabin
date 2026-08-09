@@ -27,6 +27,13 @@ import {
   ChevronRight,
   UserCheck,
   FileCheck,
+  Star,
+  Coffee,
+  Waves,
+  Mountain,
+  Tag,
+  Check,
+  Award,
 } from 'lucide-react';
 
 interface MyCabinPageProps {
@@ -35,79 +42,69 @@ interface MyCabinPageProps {
 
 export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
   const { language } = useLanguage();
-  const [selectedTab, setSelectedTab] = useState<'all' | 'lembang' | 'garut'>('all');
 
   const handleOpenWA = (text: string) => {
     const waNumber = COMPANY_DATA.contact.waNumber;
     window.open(`https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(text)}`, '_blank');
   };
 
-  const cabinTypes = [
+  const premiereUnitTypes = [
     {
-      id: 'standard',
-      title: 'STANDARD CABIN',
-      size: '25 m²',
-      capacity: '2 - 4 Guests (1 Queen Bed / Twin Bed)',
-      badge: 'STAYCATION FAVORITE',
-      description: 'Simple, private, and comfortable. Ideal for couples or small families looking for a quiet nature getaway.',
-      features: ['En-suite Bathroom', 'Mountain / Forest View', 'High-Speed Wi-Fi', 'Private Terrace'],
+      id: 'tipe-45',
+      title: 'TIPE 45',
+      subtitle: 'Ideal for Couples & Small Families',
+      price: 'Rp 598 Jt-an',
+      specs: [
+        '1 Kamar Tidur',
+        '1 Kamar Mandi',
+        'Ruang Tamu Nyaman',
+        'Teras Santai',
+      ],
+      badge: 'POPULAR CHOICE',
       image: SITE_IMAGES.cabinExterior,
     },
     {
-      id: 'cosmo',
-      title: 'COSMO CABIN',
-      size: '40 m²',
-      capacity: '4 - 6 Guests (2 Bed / Family Room)',
-      badge: 'FAMILY CHOICE',
-      description: 'Panoramic, spacious, and cozy with loft design. Perfect for family staycations with panoramic wilderness views.',
-      features: ['Spacious Living Room', 'Panoramic Glass Windows', 'Mini Bar & Coffee Corner', 'Outdoor Seating Area'],
-      image: SITE_IMAGES.cabinInterior,
-    },
-    {
-      id: 'premium',
-      title: 'PREMIUM CABIN',
-      size: '60 m²',
-      capacity: '6 - 10 Guests (Multiple Beds / Suite)',
-      badge: 'LUXURY EXECUTIVE',
-      description: 'Spacious, luxurious Scandinavian architecture for large families, executive retreats, or group gatherings.',
-      features: ['Full Living Room', 'Mini Kitchen & Bar', 'Luxury Modern Bathroom', 'Outdoor Balcony & Private Fire Pit'],
+      id: 'tipe-60',
+      title: 'TIPE 60',
+      subtitle: 'Spacious Loft & Family Sanctuary',
+      price: 'Rp 798 Jt-an',
+      specs: [
+        '2 Kamar Tidur',
+        '1 Kamar Mandi',
+        'Ruang Tamu Luas',
+        'Teras & Balkon View',
+      ],
+      badge: 'RECOMMENDED',
       image: SITE_IMAGES.scandiAFrameCabin,
     },
-  ];
-
-  const facilities = [
     {
-      icon: <UtensilsCrossed className="w-5 h-5 text-[#D4AF37]" />,
-      title: 'My Cabin Resto',
-      desc: 'Open nature dining serving gourmet dishes with panoramic pine forest views.',
-    },
-    {
-      icon: <Flame className="w-5 h-5 text-[#D4AF37]" />,
-      title: 'Fire Pit & BBQ Lounge',
-      desc: 'Warm evening bonfire gathering spot for families, friends, and corporate groups.',
-    },
-    {
-      icon: <Building2 className="w-5 h-5 text-[#D4AF37]" />,
-      title: 'Outdoor Lounge & Event Space',
-      desc: 'Scenic open-air venue ideal for MICE, intimate outdoor weddings, and retreats.',
-    },
-    {
-      icon: <Wifi className="w-5 h-5 text-[#D4AF37]" />,
-      title: 'High-Speed Wi-Fi & Parking',
-      desc: 'Seamless connectivity throughout the sanctuary with dedicated parking spaces.',
-    },
-    {
-      icon: <ShieldCheck className="w-5 h-5 text-[#D4AF37]" />,
-      title: '24/7 Security & Concierge',
-      desc: 'Round-the-clock white-glove hospitality management for ultimate peace of mind.',
+      id: 'tipe-90',
+      title: 'TIPE 90',
+      subtitle: 'Executive Suite & Large Family Haven',
+      price: 'Rp 1,198 M-an',
+      specs: [
+        '3 Kamar Tidur',
+        '2 Kamar Mandi',
+        'Ruang Tamu & Dapur',
+        'Teras, Balkon & Deck',
+      ],
+      badge: 'PREMIUM EXECUTIVE',
+      image: SITE_IMAGES.cabinInterior,
     },
   ];
 
-  const activities = [
-    { title: 'Hiking & Forest Walk', desc: 'Guided nature trails through pine forests.', image: SITE_IMAGES.cabinMorning },
-    { title: 'Night Bonfire & BBQ Party', desc: 'Cosy evening fireside gatherings under the stars.', image: SITE_IMAGES.restoSaungSare },
-    { title: 'Cycling & Nature Trail', desc: 'Scenic mountain biking & walking paths.', image: SITE_IMAGES.travelLifestyle },
-    { title: 'Family Photo Spots', desc: 'Iconic Scandinavian architecture & forest backdrop.', image: SITE_IMAGES.saungSareHero },
+  const interiorGallery = [
+    { title: 'RUANG TAMU NYAMAN', desc: 'Desain kaca panoramic dengan pemandangan pegunungan.', image: SITE_IMAGES.myCabinLivingRoom },
+    { title: 'KAMAR TIDUR ELEGAN', desc: 'Panel kayu hangat & pencahayaan ambient menenangkan.', image: SITE_IMAGES.myCabinBedroom },
+    { title: 'DAPUR MODERN', desc: 'Dapur & area makan modern berperalatan lengkap.', image: SITE_IMAGES.myCabinKitchen },
+    { title: 'VIEW MENAKJUBKAN', desc: 'Teras terbuka menghadap lembah hutan pinus tropis.', image: SITE_IMAGES.myCabinPanoramicView },
+  ];
+
+  const proximityHighlights = [
+    { time: '5 MENIT', destination: 'KE HUTAN PINUS', icon: <Trees className="w-5 h-5 text-[#D4AF37]" /> },
+    { time: '7 MENIT', destination: 'KE CAFE & RESTO', icon: <Coffee className="w-5 h-5 text-[#D4AF37]" /> },
+    { time: '10 MENIT', destination: 'KE SUNGAI', icon: <Waves className="w-5 h-5 text-[#D4AF37]" /> },
+    { time: '15 MENIT', destination: 'KE SPOT WISATA', icon: <Mountain className="w-5 h-5 text-[#D4AF37]" /> },
   ];
 
   const investmentHighlights = [
@@ -153,43 +150,38 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
     <div className="bg-[#0D1712] text-[#F8F6F0] min-h-screen text-left selection:bg-[#D4AF37] selection:text-[#0D1712]">
 
       {/* ── SUB-HEADER PAGE BAR ── */}
-      <div className="bg-[#111B15]/90 border-b border-[#D4AF37]/20 backdrop-blur-md pt-24 pb-4 px-6 sm:px-12 sticky top-0 z-40">
+      <div className="bg-[#111B15]/95 border-b border-[#D4AF37]/30 backdrop-blur-md pt-24 pb-4 px-6 sm:px-12 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           
           <div className="flex items-center gap-3">
             <Trees className="w-5 h-5 text-[#D4AF37]" />
             <div>
               <span className="font-serif font-bold text-lg text-white tracking-wide block leading-none">
-                MY CABIN
+                MY CABIN PREMIERE
               </span>
               <span className="text-[9px] font-sans tracking-[0.3em] text-[#D4AF37] uppercase font-medium">
-                ESCAPE TO NATURE • PROSPECTUS
+                WHERE NATURE EMBRACES LUXURY
               </span>
             </div>
           </div>
 
           {/* NAV JUMP LINKS */}
           <div className="hidden lg:flex items-center gap-8 text-xs font-sans tracking-widest text-[#EBE8DF]">
-            <a href="#about" className="hover:text-[#D4AF37] transition-colors">PHILOSOPHY</a>
-            <a href="#cabins" className="hover:text-[#D4AF37] transition-colors">THE CABINS</a>
-            <a href="#facilities" className="hover:text-[#D4AF37] transition-colors">FACILITIES</a>
-            <a href="#investment" className="hover:text-[#D4AF37] transition-colors">INVESTMENT</a>
-            <a href="#garut-sph" className="hover:text-[#D4AF37] transition-colors">GARUT LAND SPH</a>
+            <a href="#concept" className="hover:text-[#D4AF37] transition-colors">KONSEP</a>
+            <a href="#interior" className="hover:text-[#D4AF37] transition-colors">INTERIOR</a>
+            <a href="#units" className="hover:text-[#D4AF37] transition-colors">PILIHAN UNIT</a>
+            <a href="#location" className="hover:text-[#D4AF37] transition-colors">LOKASI</a>
+            <a href="#promo" className="hover:text-[#D4AF37] transition-colors">PROMO</a>
+            <a href="#investment" className="hover:text-[#D4AF37] transition-colors">INVESTASI</a>
           </div>
 
           {/* ACTION BUTTONS */}
           <div className="flex items-center gap-3">
-            <a
-              href="#investment"
-              className="border border-[#D4AF37]/60 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0D1712] text-[10px] sm:text-xs font-sans font-semibold uppercase tracking-[0.2em] px-4 py-2 transition-all cursor-pointer"
-            >
-              Prospectus
-            </a>
             <button
-              onClick={() => handleOpenWA('Halo Concierge MY CABIN Indonesia, saya ingin reservasi staycation / konsultasi investasi.')}
+              onClick={() => handleOpenWA('Halo Concierge MY CABIN Premiere, saya berminat informasi brosur & penawaran unit.')}
               className="bg-[#D4AF37] hover:bg-white text-[#0D1712] text-[10px] sm:text-xs font-sans font-bold uppercase tracking-[0.2em] px-5 py-2 transition-all shadow-lg cursor-pointer"
             >
-              Book A Stay
+              Hubungi Kami
             </button>
           </div>
 
@@ -197,136 +189,320 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
       </div>
 
 
-      {/* ── 1. HERO SECTION ── */}
-      <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden py-20 bg-[#0D1712]">
+      {/* ── 1. HERO BANNER — MY CABIN PREMIERE ── */}
+      <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden py-24 bg-[#0D1712]">
         
         {/* HERO BACKGROUND */}
         <div className="absolute inset-0 z-0">
           <img
             src={SITE_IMAGES.scandiAFrameCabin}
-            alt="My Cabin Scandinavian Sanctuary"
-            className="w-full h-full object-cover object-center filter brightness-[0.7] scale-105"
+            alt="My Cabin Premiere - Where Nature Embraces Luxury"
+            className="w-full h-full object-cover object-center filter brightness-[0.65] scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#0D1712]/50 to-[#0D1712] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#0D1712]/60 to-[#0D1712] z-10" />
         </div>
 
         {/* HERO CONTENT */}
-        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center space-y-6 pt-8">
+        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center space-y-7 pt-6">
           
-          <div className="inline-flex items-center gap-3 border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md px-5 py-2 rounded-full">
-            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#F8F6F0]">
-              SCANDINAVIAN CABIN & VILLATEL INVESTMENT
+          {/* BADGE */}
+          <div className="inline-flex items-center gap-2 border border-[#D4AF37]/50 bg-black/50 backdrop-blur-md px-6 py-2 rounded-full">
+            <div className="flex text-[#D4AF37] gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3 h-3 fill-[#D4AF37]" />
+              ))}
+            </div>
+            <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#F8F6F0] font-semibold pl-2">
+              PREMIUM CABIN LIVING
             </span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[1.05]">
-            RETREAT ELEGAN.<br />
-            <span className="italic text-[#D4AF37] font-light">INVESTASI CERDAS.</span>
-          </h1>
+          {/* MAIN BRAND TITLE & TAGLINE */}
+          <div className="space-y-3">
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-[1.02]">
+              MY CABIN <span className="italic text-[#D4AF37] font-light">PREMIERE</span>
+            </h1>
+            <p className="font-serif italic text-xl sm:text-3xl text-[#D4AF37] font-light tracking-wide">
+              Where Nature Embraces Luxury
+            </p>
+          </div>
 
-          <p className="font-sans font-light text-sm sm:text-lg text-[#EBE8DF] max-w-3xl mx-auto leading-relaxed tracking-wide">
-            Experience Nature in Premium Comfort — A Private Sanctuary in Lembang & Garut.
+          <p className="font-sans font-light text-sm sm:text-lg text-[#EBE8DF] max-w-2xl mx-auto leading-relaxed">
+            Lebih dari tempat beristirahat, ini adalah pengalaman hidup yang sesungguhnya.
           </p>
 
-          {/* DUAL CTA BUTTONS */}
+          {/* 4 VALUE PILLARS BAR */}
+          <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-xs font-sans text-[#EBE8DF]">
+            <div className="flex flex-col items-center justify-center p-4 bg-black/50 backdrop-blur-md border border-[#D4AF37]/30 space-y-2">
+              <Trees className="w-6 h-6 text-[#D4AF37]" />
+              <span className="font-bold uppercase tracking-wider text-[11px]">Suasana Alam Asri</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-black/50 backdrop-blur-md border border-[#D4AF37]/30 space-y-2">
+              <Bed className="w-6 h-6 text-[#D4AF37]" />
+              <span className="font-bold uppercase tracking-wider text-[11px]">Desain Modern & Elegan</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-black/50 backdrop-blur-md border border-[#D4AF37]/30 space-y-2">
+              <ShieldCheck className="w-6 h-6 text-[#D4AF37]" />
+              <span className="font-bold uppercase tracking-wider text-[11px]">Aman & Privat 24 Jam</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-black/50 backdrop-blur-md border border-[#D4AF37]/30 space-y-2">
+              <TrendingUp className="w-6 h-6 text-[#D4AF37]" />
+              <span className="font-bold uppercase tracking-wider text-[11px]">Investasi Bernilai Tinggi</span>
+            </div>
+          </div>
+
+          {/* ACTION BUTTONS */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#cabins"
+              href="#units"
               className="w-full sm:w-auto bg-[#D4AF37] hover:bg-white text-[#0D1712] font-sans font-bold text-xs uppercase tracking-[0.25em] px-8 py-4 transition-all shadow-2xl cursor-pointer text-center"
             >
-              Jelajahi Cabin & Staycation
+              Lihat Pilihan Unit
             </a>
             <a
               href="#investment"
               className="w-full sm:w-auto border border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#D4AF37] font-sans font-semibold text-xs uppercase tracking-[0.25em] px-8 py-4 transition-all backdrop-blur-md cursor-pointer text-center"
             >
-              Peluang Investasi Villatel
+              Skema Investasi Villatel
             </a>
-          </div>
-
-          {/* TRUST BADGES BAR */}
-          <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-xs font-sans text-[#EBE8DF]/90">
-            <div className="flex items-center justify-center gap-2.5 bg-black/40 backdrop-blur-sm p-3 border border-white/10">
-              <Trees className="w-4 h-4 text-[#D4AF37]" />
-              <span>Nature Surrounding</span>
-            </div>
-            <div className="flex items-center justify-center gap-2.5 bg-black/40 backdrop-blur-sm p-3 border border-white/10">
-              <Bed className="w-4 h-4 text-[#D4AF37]" />
-              <span>Premium Accommodation</span>
-            </div>
-            <div className="flex items-center justify-center gap-2.5 bg-black/40 backdrop-blur-sm p-3 border border-white/10">
-              <UtensilsCrossed className="w-4 h-4 text-[#D4AF37]" />
-              <span>Fine Nature Dining</span>
-            </div>
-            <div className="flex items-center justify-center gap-2.5 bg-black/40 backdrop-blur-sm p-3 border border-white/10">
-              <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
-              <span>24/7 Security & Hospitality</span>
-            </div>
           </div>
 
         </div>
       </section>
 
 
-      {/* ── 2. BRAND PHILOSOPHY & CONCEPT ── */}
-      <section id="about" className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5">
+      {/* ── 2. CONCEPT: HIDUP SEMPURNA DI TENGAH ALAM ── */}
+      <section id="concept" className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5 relative">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
           
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             
             {/* LEFT: TEXT */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-8 space-y-6">
               <div className="flex items-center gap-3">
                 <span className="h-[1px] w-8 bg-[#D4AF37]" />
                 <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
-                  BRAND PHILOSOPHY
+                  MY CABIN PREMIERE CONCEPT
                 </span>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-5xl text-white leading-tight">
-                Harmoni Alam,<br />
-                <span className="italic text-[#D4AF37] font-light">Kenyamanan Abadi.</span>
+                Hidup Sempurna<br />
+                <span className="italic text-[#D4AF37] font-light">Di Tengah Alam.</span>
               </h2>
 
-              <p className="font-sans font-light text-sm sm:text-base text-[#EBE8DF]/90 leading-relaxed">
-                My Cabin Indonesia menghadirkan pengalaman beristirahat yang menyatu dengan alam, melepaskan penat, dan menghabiskan waktu berkualitas bersama orang tersayang. Menggabungkan arsitektur kayu khas Scandinavia dengan kemewahan fasilitas modern, kami menghadirkan konsep akomodasi sekaligus peluang investasi properti jangka panjang yang transparan dan bernilai tinggi.
+              <p className="font-sans font-light text-base sm:text-lg text-[#EBE8DF]/90 leading-relaxed max-w-2xl">
+                My Cabin Premiere dirancang untuk Anda yang menginginkan ketenangan, kenyamanan, dan kemewahan dalam satu harmoni. Dikelilingi pepohonan hijau, udara sejuk, dan pemandangan menakjubkan yang menenangkan jiwa.
               </p>
+            </div>
 
-              {/* LOCATION HIGHLIGHT CARDS */}
-              <div className="grid sm:grid-cols-2 gap-4 pt-4">
-                <div className="p-6 bg-[#0D1712] border border-[#D4AF37]/30 space-y-2">
-                  <div className="flex items-center gap-2 text-[#D4AF37]">
-                    <MapPin className="w-4 h-4" />
-                    <span className="font-serif font-bold text-base text-white">Lembang, Jawa Barat</span>
-                  </div>
-                  <p className="text-xs text-[#EBE8DF]/70 font-light leading-relaxed">
-                    Serene pine forest, misty morning, & lake view atmosphere.
-                  </p>
-                </div>
-
-                <div className="p-6 bg-[#0D1712] border border-[#D4AF37]/30 space-y-2">
-                  <div className="flex items-center gap-2 text-[#D4AF37]">
-                    <MapPin className="w-4 h-4" />
-                    <span className="font-serif font-bold text-base text-white">Cibatu, Garut, Jawa Barat</span>
-                  </div>
-                  <p className="text-xs text-[#EBE8DF]/70 font-light leading-relaxed">
-                    Eco-tourism mountain panorama & prime development land.
-                  </p>
-                </div>
+            {/* RIGHT: CIRCLE EMBLEM BADGE */}
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="w-56 h-56 rounded-full border-2 border-[#D4AF37] bg-[#0D1712] shadow-2xl flex flex-col items-center justify-center p-6 text-center space-y-2">
+                <Award className="w-8 h-8 text-[#D4AF37]" />
+                <span className="font-serif text-xs uppercase tracking-widest text-[#D4AF37] font-bold">
+                  INVESTASI TERBAIK
+                </span>
+                <span className="text-[10px] font-sans text-white/80 uppercase tracking-wider font-light">
+                  UNTUK MASA DEPAN
+                </span>
               </div>
             </div>
 
-            {/* RIGHT: IMAGE */}
-            <div className="lg:col-span-5 relative aspect-[4/5] overflow-hidden border border-[#D4AF37]/30 shadow-2xl">
-              <img
-                src={SITE_IMAGES.travelLifestyle}
-                alt="Scandinavian Lifestyle Sanctuary"
-                className="w-full h-full object-cover filter brightness-95"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1712] via-transparent to-transparent flex items-end p-8">
-                <p className="font-serif italic text-lg text-[#F8F6F0]">
-                  "Designed for the way people want to live and invest today."
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ── 3. INTERIOR GALLERY (4 FEATURES FROM POSTER) ── */}
+      <section id="interior" className="py-24 bg-[#0D1712] text-[#F8F6F0]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
+              PREMIUM INTERIOR & VIEW
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-white">
+              Kemewahan & Kenyamanan Detail
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {interiorGallery.map((item, idx) => (
+              <div key={idx} className="group bg-[#111B15] border border-white/10 overflow-hidden hover:border-[#D4AF37] transition-all">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                </div>
+                <div className="p-5 space-y-1.5 text-center">
+                  <h3 className="font-serif font-bold text-base text-[#D4AF37] tracking-wider">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs font-sans text-[#EBE8DF]/70 font-light leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ── 4. PILIHAN UNIT TERBAIK (TIPE 45, TIPE 60, TIPE 90) ── */}
+      <section id="units" className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-3">
+              <span className="h-[1px] w-8 bg-[#D4AF37]" />
+              <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
+                UNIT SELECTION
+              </span>
+              <span className="h-[1px] w-8 bg-[#D4AF37]" />
+            </div>
+            <h2 className="font-serif text-3xl sm:text-5xl text-white">
+              Pilihan Unit Terbaik
+            </h2>
+          </div>
+
+          {/* 3 UNIT MATRIX CARDS */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {premiereUnitTypes.map((unit) => (
+              <div
+                key={unit.id}
+                className="bg-[#0D1712] border-2 border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-2xl relative"
+              >
+                <div>
+                  {/* BADGE */}
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <img
+                      src={unit.image}
+                      alt={unit.title}
+                      className="w-full h-full object-cover filter brightness-90 hover:scale-105 transition-transform duration-700"
+                    />
+                    <span className="absolute top-4 left-4 bg-[#D4AF37] text-[#0D1712] font-sans text-[9px] font-bold uppercase tracking-widest px-3 py-1">
+                      {unit.badge}
+                    </span>
+                  </div>
+
+                  {/* SPECS */}
+                  <div className="p-7 space-y-6">
+                    <div>
+                      <h3 className="font-serif font-bold text-3xl text-white">
+                        {unit.title}
+                      </h3>
+                      <p className="text-xs text-[#D4AF37] font-sans pt-1 font-medium">
+                        {unit.subtitle}
+                      </p>
+                    </div>
+
+                    <div className="space-y-3 border-t border-white/10 pt-4">
+                      {unit.specs.map((spec, sIdx) => (
+                        <div key={sIdx} className="flex items-center gap-3 text-xs text-[#EBE8DF]">
+                          <Check className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                          <span>{spec}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* PRICE */}
+                    <div className="bg-[#111B15] p-4 border border-[#D4AF37]/40 text-center">
+                      <span className="text-[10px] font-sans uppercase tracking-widest text-[#EBE8DF]/60 block mb-1">
+                        Starts From
+                      </span>
+                      <span className="font-serif text-2xl sm:text-3xl font-bold text-[#D4AF37]">
+                        {unit.price}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-7 pt-0">
+                  <button
+                    onClick={() => handleOpenWA(`Halo MY CABIN Premiere, saya ingin menanyakan info ketersediaan & brosur resmi unit *${unit.title}* (${unit.price}).`)}
+                    className="w-full bg-[#D4AF37] hover:bg-white text-[#0D1712] text-xs font-sans uppercase font-bold tracking-[0.2em] py-3.5 transition-all cursor-pointer text-center"
+                  >
+                    Pesan Unit {unit.title}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-[#EBE8DF]/50 font-sans italic pt-2">
+            *Harga dapat berubah sewaktu-waktu
+          </p>
+
+        </div>
+      </section>
+
+
+      {/* ── 5. LOKASI STRATEGIS & PROMO SPESIAL (GRID FROM POSTER) ── */}
+      <section id="location" className="py-24 bg-[#0D1712] text-[#F8F6F0]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
+          
+          <div className="grid lg:grid-cols-12 gap-12">
+            
+            {/* LEFT: LOKASI STRATEGIS (6 COLS) */}
+            <div className="lg:col-span-6 space-y-8 bg-[#111B15] p-8 sm:p-10 border border-white/10">
+              <div className="space-y-2">
+                <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
+                  PROXIMITY & ACCESSIBILITY
+                </span>
+                <h3 className="font-serif text-3xl text-white">
+                  Lokasi Strategis
+                </h3>
+                <p className="text-xs text-[#EBE8DF]/70 font-light">
+                  Dekat dengan berbagai destinasi favorit keluarga & wisata alam.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                {proximityHighlights.map((item, idx) => (
+                  <div key={idx} className="p-5 bg-[#0D1712] border border-[#D4AF37]/30 text-center space-y-2">
+                    <div className="flex justify-center">{item.icon}</div>
+                    <div className="font-serif font-bold text-lg text-white">{item.time}</div>
+                    <div className="text-[10px] font-sans text-[#D4AF37] uppercase tracking-widest font-semibold">{item.destination}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT: PROMO SPESIAL CARD (6 COLS) */}
+            <div id="promo" className="lg:col-span-6 bg-[#111B15] p-8 sm:p-10 border-2 border-[#D4AF37] flex flex-col justify-between space-y-8 relative shadow-2xl">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 bg-[#D4AF37] text-[#0D1712] font-sans text-[10px] font-bold uppercase tracking-widest px-4 py-1.5">
+                  <Tag className="w-3.5 h-3.5" />
+                  <span>PROMO SPESIAL BUYER</span>
+                </div>
+
+                <h3 className="font-serif text-4xl sm:text-5xl text-white leading-tight">
+                  FREE* <br />
+                  <span className="text-[#D4AF37]">BIAYA KPR & BPHTB</span>
+                </h3>
+
+                <p className="font-sans text-xs uppercase tracking-widest text-[#EBE8DF]/90 font-medium pt-2">
+                  UNTUK PEMBELIAN UNIT TERTENTU
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <button
+                  onClick={() => handleOpenWA('Halo Sales MY CABIN Premiere, saya ingin klaim *PROMO SPESIAL FREE BIAYA KPR & BPHTB*.')}
+                  className="w-full bg-[#D4AF37] hover:bg-white text-[#0D1712] text-xs font-sans uppercase font-bold tracking-[0.2em] py-4 transition-all cursor-pointer text-center"
+                >
+                  Klaim Promo Spesial Sekarang
+                </button>
+
+                <p className="text-[10px] text-[#EBE8DF]/50 italic text-center">
+                  *Syarat & Ketentuan Berlaku
                 </p>
               </div>
             </div>
@@ -337,153 +513,10 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
       </section>
 
 
-      {/* ── 3. ACCOMMODATION / CABIN TYPES ── */}
-      <section id="cabins" className="py-24 bg-[#0D1712] text-[#F8F6F0]">
+      {/* ── 6. SKEMA INVESTASI VILLATEL & YIELD ── */}
+      <section id="investment" className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
           
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="h-[1px] w-8 bg-[#D4AF37]" />
-              <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
-                STAYCATION COLLECTION
-              </span>
-            </div>
-            <h2 className="font-serif text-3xl sm:text-5xl text-white">
-              Tipe Kabin & Akomodasi
-            </h2>
-            <p className="font-sans font-light text-sm sm:text-base text-[#EBE8DF]/80">
-              Desain hangat, panorama alami, dan privasi penuh untuk kebutuhan istirahat Anda.
-            </p>
-          </div>
-
-          {/* 3 CABIN CARDS GRID */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {cabinTypes.map((cabin) => (
-              <div
-                key={cabin.id}
-                className="bg-[#111B15] border border-white/10 hover:border-[#D4AF37] transition-all duration-500 flex flex-col justify-between group overflow-hidden"
-              >
-                <div>
-                  {/* IMAGE */}
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <img
-                      src={cabin.image}
-                      alt={cabin.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <span className="absolute top-4 left-4 bg-[#D4AF37] text-[#0D1712] font-sans text-[9px] font-bold uppercase tracking-widest px-3 py-1">
-                      {cabin.badge}
-                    </span>
-                    <span className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-md text-[#D4AF37] font-serif text-xs font-bold px-3 py-1 border border-[#D4AF37]/40">
-                      {cabin.size}
-                    </span>
-                  </div>
-
-                  {/* CONTENT */}
-                  <div className="p-6 space-y-4">
-                    <div>
-                      <h3 className="font-serif font-bold text-2xl text-white group-hover:text-[#D4AF37] transition-colors">
-                        {cabin.title}
-                      </h3>
-                      <p className="text-xs text-[#D4AF37] font-sans pt-1 font-medium">
-                        {cabin.capacity}
-                      </p>
-                    </div>
-
-                    <p className="font-sans font-light text-xs text-[#EBE8DF]/80 leading-relaxed">
-                      {cabin.description}
-                    </p>
-
-                    <div className="pt-2 border-t border-white/10 space-y-2">
-                      <span className="text-[10px] font-sans uppercase tracking-widest text-[#D4AF37] font-semibold block">
-                        Kelebihan & Fasilitas:
-                      </span>
-                      <ul className="space-y-1.5 text-xs text-[#EBE8DF]/70 font-light">
-                        {cabin.features.map((feat, idx) => (
-                          <li key={idx} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* BOOK BUTTON */}
-                <div className="p-6 pt-0">
-                  <button
-                    onClick={() => handleOpenWA(`Halo MY CABIN Indonesia, saya berminat reservasi unit *${cabin.title}* (${cabin.size}). Mohon informasi ketersediaan tanggal.`)}
-                    className="w-full bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-[#0D1712] border border-[#D4AF37] text-xs font-sans uppercase font-bold tracking-[0.2em] py-3.5 transition-all cursor-pointer text-center flex items-center justify-center gap-2"
-                  >
-                    <span>Pesan {cabin.title}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ── 4. FACILITIES & ACTIVITIES ── */}
-      <section id="facilities" className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
-          
-          <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="h-[1px] w-8 bg-[#D4AF37]" />
-              <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
-                GUEST EXPERIENCE
-              </span>
-            </div>
-            <h2 className="font-serif text-3xl sm:text-5xl text-white">
-              Fasilitas & Aktivitas Alam
-            </h2>
-          </div>
-
-          {/* FACILITIES GRID */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {facilities.map((fac, idx) => (
-              <div key={idx} className="p-6 bg-[#0D1712] border border-white/10 space-y-3">
-                <div className="w-10 h-10 rounded-full border border-[#D4AF37]/50 flex items-center justify-center bg-[#D4AF37]/10">
-                  {fac.icon}
-                </div>
-                <h3 className="font-serif font-bold text-base text-white">{fac.title}</h3>
-                <p className="text-xs text-[#EBE8DF]/70 font-light leading-relaxed">{fac.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* ACTIVITIES VISUAL GRID */}
-          <div className="space-y-6 pt-6">
-            <h3 className="font-serif text-2xl text-[#D4AF37]">Ragam Aktivitas Menyenangkan</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {activities.map((act, idx) => (
-                <div key={idx} className="group relative aspect-[4/3] overflow-hidden border border-white/10">
-                  <img src={act.image} alt={act.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
-                    <h4 className="font-serif font-bold text-lg text-white">{act.title}</h4>
-                    <p className="text-xs text-[#EBE8DF]/80 font-light">{act.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ── 5. VILLATEL INVESTMENT & PROSPECTUS ── */}
-      <section id="investment" className="py-24 bg-[#0D1712] text-[#F8F6F0] relative overflow-hidden">
-        
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16 relative z-10">
-          
-          {/* INVESTMENT HEADER */}
           <div className="max-w-4xl space-y-4">
             <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 border border-[#D4AF37] px-4 py-1.5 text-[10px] font-sans font-bold tracking-[0.25em] uppercase text-[#D4AF37]">
               MY CABIN VILLATEL — INVESTASI ALAM & STAYCATION WITH RETURN
@@ -497,10 +530,9 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
             </p>
           </div>
 
-          {/* 6 INVESTMENT HIGHLIGHT METRICS */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {investmentHighlights.map((item, idx) => (
-              <div key={idx} className="bg-[#111B15] border border-[#D4AF37]/40 p-6 space-y-3 hover:border-[#D4AF37] transition-colors">
+              <div key={idx} className="bg-[#0D1712] border border-[#D4AF37]/40 p-6 space-y-3 hover:border-[#D4AF37] transition-colors">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-sans font-bold tracking-widest text-[#D4AF37] uppercase">
                     {item.label}
@@ -517,28 +549,12 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
             ))}
           </div>
 
-          {/* PROSPECTUS DOWNLOAD / INVESTOR ACTION */}
-          <div className="p-8 bg-[#111B15] border border-[#D4AF37]/50 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-2">
-              <h3 className="font-serif text-2xl text-white">Tertarik Menjadi Mitra Investasi Villatel?</h3>
-              <p className="text-xs text-[#EBE8DF]/80 font-sans">
-                Unduh Prospectus resmi atau jadwalkan diskusi tatap muka bersama tim Investor Relations kami.
-              </p>
-            </div>
-            <button
-              onClick={() => handleOpenWA('Halo Tim Investor Relations MY CABIN Indonesia, saya ingin meminta PDF Prospectus Investasi Villatel & informasi skema kemitraan.')}
-              className="bg-[#D4AF37] hover:bg-white text-[#0D1712] text-xs font-sans font-bold uppercase tracking-[0.25em] px-8 py-4 transition-all shadow-xl cursor-pointer shrink-0"
-            >
-              Request Prospectus PDF (WhatsApp)
-            </button>
-          </div>
-
         </div>
       </section>
 
 
-      {/* ── 6. GARUT LAND SPH FEATURE ── */}
-      <section id="garut-sph" className="py-24 bg-[#111B15] text-[#F8F6F0] border-t border-b border-white/5">
+      {/* ── 7. GARUT LAND SPH FEATURE ── */}
+      <section className="py-24 bg-[#0D1712] text-[#F8F6F0]">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
           
           <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -572,8 +588,8 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
               </button>
             </div>
 
-            {/* RIGHT: SPH METRIC CARD */}
-            <div className="lg:col-span-6 bg-[#0D1712] border-2 border-[#D4AF37] p-8 space-y-6 shadow-2xl relative">
+            {/* RIGHT: SPH CARD */}
+            <div className="lg:col-span-6 bg-[#111B15] border-2 border-[#D4AF37] p-8 space-y-6 shadow-2xl relative">
               
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <span className="font-serif font-bold text-lg text-[#D4AF37]">RINGKASAN AKUISISI LAHAN GARUT</span>
@@ -607,7 +623,7 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
                 </div>
               </div>
 
-              <div className="p-3 bg-[#111B15] text-[10px] text-[#EBE8DF]/60 text-center font-light border border-white/5">
+              <div className="p-3 bg-[#0D1712] text-[10px] text-[#EBE8DF]/60 text-center font-light border border-white/5">
                 Dikelola secara transparan di bawah payung hukum JBI World Holding Company.
               </div>
 
@@ -619,62 +635,41 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
       </section>
 
 
-      {/* ── 7. BOOKING & INVESTMENT FLOW ── */}
-      <section className="py-24 bg-[#0D1712] text-[#F8F6F0]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-16">
+      {/* ── 8. FOOTER CALL TO ACTION BANNER (DIRECT PHONE & TAGLINE FROM POSTER) ── */}
+      <footer className="py-20 bg-[#0A0F0D] text-[#F8F6F0] border-t border-[#D4AF37]/30">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-12 text-center sm:text-left">
           
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">
-              SIMPLE USER FLOW
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-white">
-              Alur Pemesanan & Investasi
-            </h2>
-          </div>
+          <div className="p-8 sm:p-12 bg-[#111B15] border border-[#D4AF37]/50 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="space-y-3">
+              <span className="text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-[#D4AF37] block">
+                MY CABIN PREMIERE
+              </span>
+              <h3 className="font-serif text-3xl sm:text-4xl text-white">
+                HUBUNGI KAMI SEKARANG
+              </h3>
+              <p className="font-serif italic text-lg text-[#D4AF37] font-light">
+                "Tempat istimewa untuk hidup yang lebih bermakna."
+              </p>
+            </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { num: '01', title: 'Pilih Kabin / Skema', desc: 'Tentukan tipe kabin staycation atau opsi kemitraan villatel.' },
-              { num: '02', title: 'Tanggal / Site Visit', desc: 'Pilih jadwal menginap atau survey lokasi lahan Lembang & Garut.' },
-              { num: '03', title: 'Konsultasi Direct', desc: 'Hubungi tim Concierge & Investor Relations via WhatsApp.' },
-              { num: '04', title: 'Konfirmasi & Enjoy', desc: 'Terima voucher menginap atau kontrak penawaran investasi resmi.' },
-            ].map((step, idx) => (
-              <div key={idx} className="p-6 bg-[#111B15] border border-white/10 space-y-3 relative">
-                <span className="font-serif text-4xl text-[#D4AF37]/40 font-bold block">{step.num}</span>
-                <h3 className="font-serif text-lg font-bold text-white">{step.title}</h3>
-                <p className="text-xs text-[#EBE8DF]/70 font-light">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ── 8. FOOTER ATTRIBUTION & BRAND CREDENTIALS ── */}
-      <footer className="py-16 bg-[#0A0F0D] text-[#F8F6F0] border-t border-[#D4AF37]/30">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 space-y-8 text-center sm:text-left">
-          
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-white/10 pb-8">
-            <div>
-              <span className="font-serif text-2xl font-bold text-white block">MY CABIN INDONESIA</span>
-              <span className="text-[10px] font-sans tracking-[0.3em] uppercase text-[#D4AF37]">
-                ESCAPE TO NATURE • VILLATEL & HOSPITALITY
+            <div className="flex flex-col items-center md:items-end gap-3">
+              <a
+                href="https://wa.me/6287744990421"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-white text-[#0D1712] font-sans text-base font-bold tracking-widest px-8 py-4 transition-all shadow-xl"
+              >
+                <Phone className="w-5 h-5" />
+                <span>0877 4499 0421</span>
+              </a>
+              <span className="text-xs text-[#EBE8DF]/60 font-sans">
+                www.mycabinpremiere.com
               </span>
             </div>
-
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => handleOpenWA('Halo Concierge MY CABIN, saya ingin menanyakan info staycation.')}
-                className="bg-[#D4AF37] hover:bg-white text-[#0D1712] text-xs font-sans font-bold uppercase tracking-widest px-6 py-3 transition-all cursor-pointer"
-              >
-                Chat WhatsApp
-              </button>
-            </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between text-xs text-[#EBE8DF]/60 font-light gap-4">
-            <p>© {new Date().getFullYear()} MY CABIN INDONESIA. Supported by <strong className="text-[#D4AF37]">MY HOLIDAY</strong> (Empowering Lifestyle Travel & Investment).</p>
+          <div className="flex flex-col md:flex-row items-center justify-between text-xs text-[#EBE8DF]/60 font-light gap-4 pt-4 border-t border-white/10">
+            <p>© {new Date().getFullYear()} MY CABIN PREMIERE. Supported by <strong className="text-[#D4AF37]">MY HOLIDAY</strong> (Empowering Lifestyle Travel & Investment).</p>
             <p className="tracking-widest uppercase text-[#D4AF37] font-semibold">POWERED BY JBI WORLD HOLDING COMPANY</p>
           </div>
 
@@ -682,22 +677,22 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
       </footer>
 
 
-      {/* ── 9. MOBILE STICKY BOTTOM ACTION BAR ── */}
+      {/* ── 9. MOBILE STICKY ACTION BAR ── */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0D1712]/95 border-t border-[#D4AF37]/40 backdrop-blur-lg p-3 grid grid-cols-2 gap-3 shadow-2xl">
         <button
-          onClick={() => handleOpenWA('Halo Concierge MY CABIN Indonesia, saya ingin reservasi kamar / staycation.')}
+          onClick={() => handleOpenWA('Halo Sales MY CABIN Premiere, saya berminat informasi unit & reservasi.')}
           className="bg-[#D4AF37] text-[#0D1712] text-[10px] font-sans font-bold uppercase tracking-wider py-3 flex items-center justify-center gap-1.5 shadow-lg"
         >
           <Bed className="w-3.5 h-3.5" />
-          <span>Book Stay</span>
+          <span>Pesan Unit</span>
         </button>
 
         <button
-          onClick={() => handleOpenWA('Halo Tim Investor Relations MY CABIN Indonesia, saya ingin konsultasi Investasi Villatel & Lahan Garut.')}
+          onClick={() => handleOpenWA('Halo Tim Investor Relations MY CABIN Premiere, saya ingin konsultasi promo KPR & Investasi.')}
           className="border border-[#D4AF37] text-[#D4AF37] bg-[#111B15] text-[10px] font-sans font-bold uppercase tracking-wider py-3 flex items-center justify-center gap-1.5"
         >
           <Coins className="w-3.5 h-3.5 text-[#D4AF37]" />
-          <span>Investor Chat</span>
+          <span>Chat Investor</span>
         </button>
       </div>
 
