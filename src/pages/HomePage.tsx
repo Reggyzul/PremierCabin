@@ -29,20 +29,20 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
             const scrollY = window.scrollY;
             const windowHeight = window.innerHeight;
 
-            // Travel distance required to pull the sheet completely up: 1.4 * windowHeight
-            const maxScroll = windowHeight * 1.4;
+            // Travel distance: 0.75 * windowHeight — precise & responsive without dead scroll space
+            const maxScroll = windowHeight * 0.75;
             const rawProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
 
-            // Smooth cubic easing for luxurious slow movement
-            const progress = 1 - Math.pow(1 - rawProgress, 2.5);
+            // Smooth quad easing curve
+            const progress = 1 - Math.pow(1 - rawProgress, 2);
 
             // Sheet rises from translateY(100%) to translateY(0%)
             const translateY = (1 - progress) * 100;
             sheet.style.transform = `translate3d(0, ${translateY}%, 0)`;
 
             // Subtle scale & dark vignette transition on Hero
-            const scale = 1 + rawProgress * 0.05;
-            const opacity = 1 - rawProgress * 0.45;
+            const scale = 1 + rawProgress * 0.04;
+            const opacity = 1 - rawProgress * 0.4;
             hero.style.transform = `scale(${scale})`;
             hero.style.opacity = `${opacity}`;
           }
@@ -63,8 +63,8 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
   return (
     <div className="relative text-left bg-[#0B241C] text-[#F5F1E8] overflow-x-hidden">
 
-      {/* ── 1. SCROLL SCENE (240vh scene container for slow, smooth sheet reveal) ── */}
-      <div style={{ height: '240vh' }} className="relative">
+      {/* ── 1. PRECISE SCROLL SCENE (165vh for tight, responsive sheet reveal) ── */}
+      <div style={{ height: '165vh' }} className="relative">
 
         {/* STICKY HERO BACKGROUND */}
         <div
@@ -77,10 +77,10 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
           />
         </div>
 
-        {/* SLOW RISING SHEET (KISAH KAMI / TENTANG KAMI) */}
+        {/* PRECISE RISING SHEET (KISAH KAMI / TENTANG KAMI) — h-auto content fitted */}
         <div
           ref={sheetRef}
-          className="sticky top-0 z-10 w-full min-h-screen will-change-transform bg-[#0D2820] rounded-t-[36px] sm:rounded-t-[56px] shadow-[0_-30px_90px_rgba(0,0,0,0.9)] border-t border-white/10"
+          className="sticky top-0 z-10 w-full will-change-transform bg-[#0D2820] rounded-t-[32px] sm:rounded-t-[48px] shadow-[0_-25px_80px_rgba(0,0,0,0.9)] border-t border-white/10"
           style={{ transform: 'translate3d(0, 100%, 0)' }}
         >
           <StoryIntroSection onNavigatePage={onNavigatePage} />
@@ -88,7 +88,7 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
 
       </div>
 
-      {/* ── 2. SUBSEQUENT PAGE SECTIONS ── */}
+      {/* ── 2. SEAMLESS CONTINUATION OF SECTIONS ── */}
       <div className="relative z-20 bg-[#0B241C]">
         <FullWidthImageStorySection />
         <ProjectShowcaseSection onOpenSaungSareModal={onOpenSaungSareModal} />
