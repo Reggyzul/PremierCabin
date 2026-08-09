@@ -29,16 +29,16 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
             const scrollY = window.scrollY;
             const windowHeight = window.innerHeight;
 
-            // Travel distance: 0.75 * windowHeight — precise & responsive without dead scroll space
-            const maxScroll = windowHeight * 0.75;
+            // Travel distance: 0.85 * windowHeight for smooth overlay transition
+            const maxScroll = windowHeight * 0.85;
             const rawProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
 
             // Smooth quad easing curve
             const progress = 1 - Math.pow(1 - rawProgress, 2);
 
-            // Sheet rises from translateY(100%) to translateY(0%)
-            const translateY = (1 - progress) * 100;
-            sheet.style.transform = `translate3d(0, ${translateY}%, 0)`;
+            // Sheet rises from translateY(100vh) down to translateY(0px)
+            const translateY = (1 - progress) * windowHeight;
+            sheet.style.transform = `translate3d(0, ${translateY}px, 0)`;
 
             // Subtle scale & dark vignette transition on Hero
             const scale = 1 + rawProgress * 0.04;
@@ -63,10 +63,10 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
   return (
     <div className="relative text-left bg-[#0B241C] text-[#F5F1E8] overflow-x-hidden">
 
-      {/* ── 1. PRECISE SCROLL SCENE (165vh for tight, responsive sheet reveal) ── */}
-      <div style={{ height: '165vh' }} className="relative">
+      {/* ── 1. PRECISE SCROLL SCENE (180vh for zero-gap overlay transition) ── */}
+      <div style={{ height: '180vh' }} className="relative">
 
-        {/* STICKY HERO BACKGROUND */}
+        {/* STICKY HERO BACKGROUND (Fills 100% of viewport) */}
         <div
           ref={heroRef}
           className="sticky top-0 z-0 h-screen w-full overflow-hidden will-change-transform"
@@ -77,11 +77,11 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
           />
         </div>
 
-        {/* PRECISE RISING SHEET (KISAH KAMI / TENTANG KAMI) — h-auto content fitted */}
+        {/* ABSOLUTE RISING SHEET (KISAH KAMI / TENTANG KAMI) — absolute top-0, initial translateY = 100vh */}
         <div
           ref={sheetRef}
-          className="sticky top-0 z-10 w-full will-change-transform bg-[#0D2820] rounded-t-[32px] sm:rounded-t-[48px] shadow-[0_-25px_80px_rgba(0,0,0,0.9)] border-t border-white/10"
-          style={{ transform: 'translate3d(0, 100%, 0)' }}
+          className="absolute top-0 left-0 right-0 z-10 w-full will-change-transform bg-[#0D2820] rounded-t-[32px] sm:rounded-t-[48px] shadow-[0_-25px_80px_rgba(0,0,0,0.9)] border-t border-white/10"
+          style={{ transform: 'translate3d(0, 100vh, 0)' }}
         >
           <StoryIntroSection onNavigatePage={onNavigatePage} />
         </div>
