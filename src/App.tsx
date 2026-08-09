@@ -5,6 +5,7 @@ import ContactModal from './components/ContactModal';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import SaungSarePage from './pages/SaungSarePage';
+import MyCabinPage from './pages/MyCabinPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import { LanguageProvider } from './context/LanguageContext';
@@ -12,7 +13,7 @@ import { ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 function MainAppContent() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'saung-sare' | 'services' | 'contact'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact'>('home');
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('Pilot Project Saung Sare');
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -32,7 +33,7 @@ function MainAppContent() {
     setContactModalOpen(true);
   };
 
-  const handleNavigatePage = (page: 'home' | 'about' | 'saung-sare' | 'services' | 'contact') => {
+  const handleNavigatePage = (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -63,6 +64,8 @@ function MainAppContent() {
           <AboutPage onOpenContactModal={(svc) => handleOpenContactWithService(svc)} />
         ) : currentPage === 'saung-sare' ? (
           <SaungSarePage onOpenContactModal={(svc) => handleOpenContactWithService(svc)} />
+        ) : currentPage === 'my-cabin' ? (
+          <MyCabinPage onOpenContactModal={(svc) => handleOpenContactWithService(svc)} />
         ) : currentPage === 'services' ? (
           <ServicesPage onOpenContactModal={(svc) => handleOpenContactWithService(svc)} />
         ) : (

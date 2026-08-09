@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 
 interface FooterSectionProps {
-  onNavigatePage?: (page: 'home' | 'about' | 'saung-sare' | 'services' | 'contact') => void;
+  onNavigatePage?: (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => void;
   onOpenContactModal?: (service?: string) => void;
 }
 
@@ -64,7 +64,12 @@ export default function FooterSection({ onNavigatePage, onOpenContactModal }: Fo
               </li>
               <li>
                 <button onClick={() => onNavigatePage && onNavigatePage('saung-sare')} className="hover:text-[#C9A227] transition-colors cursor-pointer">
-                  {TRANSLATIONS[language].nav.projects}
+                  {TRANSLATIONS[language].nav.projects} — Saung Sare
+                </button>
+              </li>
+              <li>
+                <button onClick={() => onNavigatePage && onNavigatePage('my-cabin')} className="hover:text-[#C9A227] transition-colors cursor-pointer">
+                  My Cabin Prospectus
                 </button>
               </li>
               <li>

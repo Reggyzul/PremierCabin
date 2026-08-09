@@ -6,6 +6,8 @@ import restoSaungSareImg from '../assets/resto_saung_sare.png';
 import hospitalityImg from '../assets/hospitality.png';
 import investasiImg from '../assets/investasi.png';
 import travelLifestyleImg from '../assets/travel_lifestyle.png';
+import scandiAFrameCabinImg from '../assets/scandi_a_frame_cabin.png';
+import garutEcoLahanImg from '../assets/garut_eco_lahan.png';
 
 // Centralized High-Resolution 4K Editorial Asset Management for PT. Premier Cabin Internasional
 export const SITE_IMAGES = {
@@ -52,4 +54,8 @@ export const SITE_IMAGES = {
   valuesDetail3: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=95',
   valuesDetail4: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=95',
   valuesDetail5: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=95',
+
+  // 11. MY CABIN PROSPECTUS ASSETS
+  scandiAFrameCabin: scandiAFrameCabinImg,
+  garutEcoLahan: garutEcoLahanImg,
 };

@@ -3,7 +3,11 @@ import { SITE_IMAGES } from '../data/assetsData';
 import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 
-export default function SustainabilitySection() {
+interface SustainabilitySectionProps {
+  onNavigatePage?: (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => void;
+}
+
+export default function SustainabilitySection({ onNavigatePage }: SustainabilitySectionProps) {
   const { language } = useLanguage();
   const t = TRANSLATIONS[language].sustainability;
 
@@ -37,6 +41,17 @@ export default function SustainabilitySection() {
         <p className="font-sans font-light text-xs sm:text-base text-[#D8CDBB] max-w-2xl mx-auto leading-relaxed tracking-wide drop-shadow-md">
           {t.subtext}
         </p>
+
+        {onNavigatePage && (
+          <div className="pt-4">
+            <button
+              onClick={() => onNavigatePage('my-cabin')}
+              className="border border-[#C9A227] bg-[#C9A227] text-[#0B241C] hover:bg-white hover:border-white font-sans text-xs uppercase font-bold tracking-[0.25em] px-8 py-3.5 transition-all shadow-2xl cursor-pointer"
+            >
+              Jelajahi My Cabin Prospectus
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

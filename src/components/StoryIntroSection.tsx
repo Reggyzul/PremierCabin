@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 
 interface StoryIntroSectionProps {
-  onNavigatePage?: (page: 'home' | 'about' | 'saung-sare' | 'services' | 'contact') => void;
+  onNavigatePage?: (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => void;
 }
 
 export default function StoryIntroSection({ onNavigatePage }: StoryIntroSectionProps) {

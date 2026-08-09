@@ -4,8 +4,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 
 interface NavbarProps {
-  currentPage: 'home' | 'about' | 'saung-sare' | 'services' | 'contact';
-  setCurrentPage: (page: 'home' | 'about' | 'saung-sare' | 'services' | 'contact') => void;
+  currentPage: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact';
+  setCurrentPage: (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => void;
   onOpenContactModal: () => void;
 }
 
@@ -24,7 +24,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenContactModal
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (page: 'home' | 'about' | 'saung-sare' | 'services' | 'contact', sectionId?: string) => {
+  const handleNavClick = (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact', sectionId?: string) => {
     setMenuOpen(false);
     setCurrentPage(page);
 
@@ -140,6 +140,15 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenContactModal
               }`}
             >
               {t.projects} — Saung Sare
+            </button>
+
+            <button
+              onClick={() => handleNavClick('my-cabin')}
+              className={`block mx-auto font-serif text-2xl sm:text-4xl md:text-5xl tracking-wide transition-colors ${
+                currentPage === 'my-cabin' ? 'text-[#C9A227] italic font-semibold' : 'text-white/90 hover:text-[#C9A227]'
+              }`}
+            >
+              My Cabin — Prospectus
             </button>
 
             <button

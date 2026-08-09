@@ -8,7 +8,7 @@ import ValuesEditorialSection from '../components/ValuesEditorialSection';
 import BrandStatementSection from '../components/BrandStatementSection';
 
 interface HomePageProps {
-  onNavigatePage: (page: 'home' | 'about' | 'saung-sare' | 'services' | 'contact') => void;
+  onNavigatePage: (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => void;
   onOpenSaungSareModal: () => void;
   onOpenContactModal: (serviceName?: string) => void;
 }
@@ -39,7 +39,7 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
         <ProjectShowcaseSection onOpenSaungSareModal={onOpenSaungSareModal} />
 
         {/* NATURE & SUSTAINABILITY */}
-        <SustainabilitySection />
+        <SustainabilitySection onNavigatePage={onNavigatePage} />
 
         {/* VALUES (5-COLUMN EDITORIAL GRID) */}
         <ValuesEditorialSection />

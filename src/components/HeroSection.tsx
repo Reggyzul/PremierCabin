@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 interface HeroSectionProps {
   onOpenSaungSare?: () => void;
   onOpenContactModal?: () => void;
-  onNavigatePage?: (page: 'home' | 'about' | 'saung-sare' | 'services' | 'contact') => void;
+  onNavigatePage?: (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => void;
 }
 
 export default function HeroSection({ onOpenSaungSare, onNavigatePage }: HeroSectionProps) {
