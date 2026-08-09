@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import HeroSection from '../components/HeroSection';
 import StoryIntroSection from '../components/StoryIntroSection';
 import FullWidthImageStorySection from '../components/FullWidthImageStorySection';
@@ -14,87 +14,39 @@ interface HomePageProps {
 }
 
 export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenContactModal }: HomePageProps) {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const sheetRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const hero = heroRef.current;
-          const sheet = sheetRef.current;
-          if (hero && sheet) {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-
-            // Travel distance: 0.85 * windowHeight for smooth overlay transition
-            const maxScroll = windowHeight * 0.85;
-            const rawProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-
-            // Smooth quad easing curve
-            const progress = 1 - Math.pow(1 - rawProgress, 2);
-
-            // Sheet rises from translateY(100vh) down to translateY(0px)
-            const translateY = (1 - progress) * windowHeight;
-            sheet.style.transform = `translate3d(0, ${translateY}px, 0)`;
-
-            // Subtle scale & dark vignette transition on Hero
-            const scale = 1 + rawProgress * 0.04;
-            const opacity = 1 - rawProgress * 0.4;
-            hero.style.transform = `scale(${scale})`;
-            hero.style.opacity = `${opacity}`;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial calculation
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <div className="relative text-left bg-[#0B241C] text-[#F5F1E8] overflow-x-hidden">
 
-      {/* ── 1. PRECISE SCROLL SCENE (180vh for zero-gap overlay transition) ── */}
-      <div style={{ height: '180vh' }} className="relative">
-
-        {/* STICKY HERO BACKGROUND (Fills 100% of viewport) */}
-        <div
-          ref={heroRef}
-          className="sticky top-0 z-0 h-screen w-full overflow-hidden will-change-transform"
-        >
-          <HeroSection
-            onNavigatePage={onNavigatePage}
-            onOpenSaungSare={onOpenSaungSareModal}
-          />
-        </div>
-
-        {/* ABSOLUTE RISING SHEET (KISAH KAMI / TENTANG KAMI) — absolute top-0, initial translateY = 100vh */}
-        <div
-          ref={sheetRef}
-          className="absolute top-0 left-0 right-0 z-10 w-full will-change-transform bg-[#0D2820] rounded-t-[32px] sm:rounded-t-[48px] shadow-[0_-25px_80px_rgba(0,0,0,0.9)] border-t border-white/10"
-          style={{ transform: 'translate3d(0, 100vh, 0)' }}
-        >
-          <StoryIntroSection onNavigatePage={onNavigatePage} />
-        </div>
-
+      {/* ── 1. STICKY HERO SECTION (Pinned at top background) ── */}
+      <div className="sticky top-0 z-0 h-screen w-full overflow-hidden">
+        <HeroSection
+          onNavigatePage={onNavigatePage}
+          onOpenSaungSare={onOpenSaungSareModal}
+        />
       </div>
 
-      {/* ── 2. SEAMLESS CONTINUATION OF SECTIONS ── */}
-      <div className="relative z-20 bg-[#0B241C]">
+      {/* ── 2. UNIFIED CONTINUOUS SHEET OVERLAY (ALL sections joined seamlessly) ── */}
+      {/* As the user scrolls, this single unified sheet slides smoothly over the sticky Hero */}
+      <div className="relative z-10 bg-[#0B241C] rounded-t-[32px] sm:rounded-t-[48px] shadow-[0_-30px_90px_rgba(0,0,0,0.95)] border-t border-white/10">
+
+        {/* KISAH KAMI / TENTANG KAMI */}
+        <StoryIntroSection onNavigatePage={onNavigatePage} />
+
+        {/* FULL-WIDTH CINEMATIC IMAGE STORY */}
         <FullWidthImageStorySection />
+
+        {/* PROJECTS SHOWCASE (SAUNG SARE) */}
         <ProjectShowcaseSection onOpenSaungSareModal={onOpenSaungSareModal} />
+
+        {/* NATURE & SUSTAINABILITY */}
         <SustainabilitySection />
+
+        {/* VALUES (5-COLUMN EDITORIAL GRID) */}
         <ValuesEditorialSection />
+
+        {/* BRAND STATEMENT */}
         <BrandStatementSection />
+
       </div>
 
     </div>
