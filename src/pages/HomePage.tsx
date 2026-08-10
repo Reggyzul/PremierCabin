@@ -6,6 +6,7 @@ import SustainabilitySection from '../components/SustainabilitySection';
 import ProjectShowcaseSection from '../components/ProjectShowcaseSection';
 import ValuesEditorialSection from '../components/ValuesEditorialSection';
 import BrandStatementSection from '../components/BrandStatementSection';
+import SiteExplorationVideoSection from '../components/SiteExplorationVideoSection';
 
 interface HomePageProps {
   onNavigatePage: (page: 'home' | 'about' | 'saung-sare' | 'my-cabin' | 'services' | 'contact') => void;
@@ -43,6 +44,9 @@ export default function HomePage({ onNavigatePage, onOpenSaungSareModal, onOpenC
 
         {/* VALUES (5-COLUMN EDITORIAL GRID) */}
         <ValuesEditorialSection />
+
+        {/* SITE EXPLORATION VIDEO LIGHTBOX (PRE-FOOTER) */}
+        <SiteExplorationVideoSection />
 
         {/* BRAND STATEMENT */}
         <BrandStatementSection />
