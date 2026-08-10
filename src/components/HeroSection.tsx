@@ -69,9 +69,6 @@ export default function HeroSection({ onOpenSaungSare, onNavigatePage }: HeroSec
             <span className="font-sans font-bold text-[10px] sm:text-[12px] md:text-[13px] text-white tracking-[0.18em] sm:tracking-[0.22em] uppercase drop-shadow-lg">
               JBI WORLD HOLDING COMPANY
             </span>
-            <span className="font-sans font-light text-[9px] sm:text-[10px] md:text-[11px] text-[#C9A227] tracking-[0.12em] sm:tracking-[0.16em] capitalize drop-shadow-md mt-1">
-              Support by My Holiday, Travel Advice, My Property Assets Management.
-            </span>
           </div>
         </div>
 
