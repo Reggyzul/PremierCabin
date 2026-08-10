@@ -752,11 +752,6 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between text-xs text-[#EBE8DF]/60 font-light gap-4 pt-4 border-t border-white/10">
-            <p>© {new Date().getFullYear()} MY CABIN PROSPECTUS. Supported by <strong className="text-[#D4AF37]">MY HOLIDAY</strong> (Empowering Lifestyle Travel & Investment).</p>
-            <p className="tracking-widest uppercase text-[#D4AF37] font-semibold">POWERED BY JBI WORLD HOLDING COMPANY</p>
-          </div>
-
         </div>
       </footer>
 
