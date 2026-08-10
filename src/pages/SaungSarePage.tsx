@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SITE_IMAGES } from '../data/assetsData';
 import { useLanguage } from '../context/LanguageContext';
+import SiteExplorationVideoSection from '../components/SiteExplorationVideoSection';
 import {
   Wind,
   Bed,
@@ -478,6 +479,11 @@ export default function SaungSarePage({ onOpenContactModal }: SaungSarePageProps
                 ? 'Saung Sare berkomitmen untuk menjaga alam dan memberdayakan warga sekitar.'
                 : 'Saung Sare is committed to preserving nature and empowering the surrounding community.'}
             </p>
+          </div>
+
+          {/* SITE EXPLORATION VIDEO LIGHTBOX */}
+          <div className="pt-8">
+            <SiteExplorationVideoSection />
           </div>
 
           {/* LOCATION & CONTACT BAR */}

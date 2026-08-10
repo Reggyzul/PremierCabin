@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { SITE_IMAGES } from '../data/assetsData';
 import { useLanguage } from '../context/LanguageContext';
 import { COMPANY_DATA } from '../data/companyData';
-import SiteExplorationVideoSection from '../components/SiteExplorationVideoSection';
 import {
   Trees,
   Bed,
@@ -718,10 +717,6 @@ export default function MyCabinPage({ onOpenContactModal }: MyCabinPageProps) {
 
         </div>
       </section>
-
-
-      {/* ── SITE EXPLORATION VIDEO LIGHTBOX (PRE-FOOTER) ── */}
-      <SiteExplorationVideoSection />
 
 
       {/* ── 8. FOOTER CALL TO ACTION BANNER (DIRECT PHONE & TAGLINE FROM POSTER) ── */}
