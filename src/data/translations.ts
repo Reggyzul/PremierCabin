@@ -20,6 +20,7 @@ export const TRANSLATIONS = {
       ctaPrimary: 'JELAJAHI VISI KAMI',
       ctaSecondary: 'TEMUKAN PROYEK KAMI',
       developmentSub: 'DEVELOPMENT BY JBI WORLD HOLDING COMPANY',
+      supportSub: 'Support by My Holiday, Travel Advice, My Property Assets Management.',
     },
     story: {
       label: 'KISAH KAMI',
@@ -136,6 +137,7 @@ export const TRANSLATIONS = {
       fullAddress: 'BLOK M SQUARE OFFICE Lantai 6, Jl. Melawai V No.6, RT 03 / RW 01, Kel. Melawai, Kebayoran Baru, Jakarta Selatan 12130',
       rights: 'Hak Cipta Dilindungi Undang-Undang.',
       developerSub: 'Development by JBI World Holding Company',
+      supportSub: 'Support by My Holiday, Travel Advice, My Property Assets Management.',
     },
     modal: {
       contactTitle: 'Formulir Diskusi & Konsultasi',
@@ -172,6 +174,7 @@ export const TRANSLATIONS = {
       ctaPrimary: 'EXPLORE OUR VISION',
       ctaSecondary: 'DISCOVER OUR PROJECTS',
       developmentSub: 'DEVELOPMENT BY JBI WORLD HOLDING COMPANY',
+      supportSub: 'Support by My Holiday, Travel Advice, My Property Assets Management.',
     },
     story: {
       label: 'OUR STORY',
@@ -288,6 +291,7 @@ export const TRANSLATIONS = {
       fullAddress: 'BLOK M SQUARE OFFICE Floor 6, Jl. Melawai V No.6, RT 03 / RW 01, Melawai, Kebayoran Baru, South Jakarta 12130',
       rights: 'All Rights Reserved.',
       developerSub: 'Development by JBI World Holding Company',
+      supportSub: 'Support by My Holiday, Travel Advice, My Property Assets Management.',
     },
     modal: {
       contactTitle: 'Consultation & Inquiry Form',

@@ -115,9 +115,14 @@ export default function FooterSection({ onNavigatePage, onOpenContactModal }: Fo
         {/* BOTTOM COPYRIGHT & HOLDING COMPANY SUBTITLE */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-xs font-sans font-light text-white/50 gap-4">
           <p>© {new Date().getFullYear()} PT. Premier Cabin Internasional. {t.rights}</p>
-          <p className="tracking-[0.2em] uppercase font-medium text-[#C9A227]">
-            {t.developerSub}
-          </p>
+          <div className="text-center sm:text-right">
+            <p className="tracking-[0.2em] uppercase font-medium text-[#C9A227]">
+              {t.developerSub}
+            </p>
+            <p className="text-[10px] text-white/70 font-light tracking-wide pt-0.5">
+              {t.supportSub}
+            </p>
+          </div>
         </div>
 
       </div>

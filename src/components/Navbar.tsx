@@ -176,7 +176,10 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenContactModal
           {/* BOTTOM BAR IN MENU */}
           <div className="max-w-7xl mx-auto w-full pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
             <p>© {new Date().getFullYear()} PT. Premier Cabin Internasional. All rights reserved.</p>
-            <p className="tracking-widest uppercase text-[#C9A227]">Development by JBI World Holding Company</p>
+            <div className="text-center sm:text-right">
+              <p className="tracking-widest uppercase text-[#C9A227] font-medium">Development by JBI World Holding Company</p>
+              <p className="text-[10px] text-white/70 font-light tracking-wide pt-0.5">Support by My Holiday, Travel Advice, My Property Assets Management.</p>
+            </div>
           </div>
 
         </div>
